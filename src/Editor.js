@@ -20,7 +20,8 @@ export default function Editor(props) {
 
     return (
         <div className="editor-container">
-            <div className="editor-title">
+            <div className="editor-title" 
+            style={{padding: "inherit"}}>
                 {displayName}
             </div>
             <ControlledEditor
