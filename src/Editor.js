@@ -14,7 +14,7 @@ export default function Editor(props) {
         value
     } = props;
 
-    function handleChange(editor, data,value){
+    function handleChange(editor,data,value){
         onChange(value)
     }
 
@@ -31,7 +31,7 @@ export default function Editor(props) {
                 lineWrapping:true,
                 lint:true,
                 mode:language,
-                lineNumbers:false,
+                lineNumbers:true,
                 theme:"material"
             }}
             />

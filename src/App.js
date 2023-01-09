@@ -1,11 +1,12 @@
 import Editor from './Editor'
-import {useState, useEffect} from "react"
+import React, { useState } from "react"
 function App() {
 
-const [html, setHtml] = useState('')
-const [css, setCss] = useState('')
-const [js, setJs] = useState('')
-const srcDoc = `
+  const [html, setHtml] = useState('')
+  const [css, setCss] = useState('')
+  const [js, setJs] = useState('')
+
+  var srcDoc = `
   <html>
     <body>${html}</body>
     <style>${css}</syle>
@@ -13,34 +14,37 @@ const srcDoc = `
   </html>
 `;
 
-return (
-  <>
-    <div className="pane top-pane">
-      <Editor language="xml" 
-        displayName="HTML"
-        value={html}
-        onChange={setHtml}
+  return (
+    <>
+      <div className="pane top-pane">
+        <Editor
+          language="xml"
+          displayName="HTML"
+          value={html}
+          onChange={setHtml}
         />
-        <Editor language="css" 
-        displayName="CSS"
-        value={css}
-        onChange={setCss}
+        <Editor
+          language="css"
+          displayName="CSS"
+          value={css}
+          onChange={setCss}
         />
-        <Editor language="javascript" 
-        displayName="JS"
-        value={js}
-        onChange={setJs}
+        <Editor
+          language="javascript"
+          displayName="JS"
+          value={js}
+          onChange={setJs}
         />
       </div>
       <div className="pane">
-      <iframe 
-        srcDoc={srcDoc}
-        title="output"
-        sandbox="allow-scripts"
-        frameBorder="0"
-        width="100%"
-        height="100%"
-      />
+        <iframe
+          srcDoc={srcDoc}
+          title="output"
+          sandbox="allow-scripts"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+        />
       </div>
     </>
   );
