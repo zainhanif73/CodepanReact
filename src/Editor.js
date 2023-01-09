@@ -19,7 +19,7 @@ export default function Editor(props) {
     }
 
     return (
-        <div className="editor-container">
+        <div className="editor-container" style={{width:"282px"}}>
             <div className="editor-title" 
             style={{padding: "inherit"}}>
                 {displayName}
@@ -28,6 +28,7 @@ export default function Editor(props) {
             onBeforeChange={handleChange}
             value={value}
             className="code-mirror-wrapper"
+            style={{width:"276px"}}
             options={{
                 lineWrapping:true,
                 lint:true,
